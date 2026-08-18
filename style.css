@@ -331,6 +331,21 @@ h1 {
 
   font-weight: 800;
 
+  margin-bottom: 18px;
+}
+
+.via {
+
+  color: var(--operator-color);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
   margin-bottom: 28px;
 }
 
@@ -615,6 +630,33 @@ h1 {
 
   .stats {
     grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+#result.route-out {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+#result.route-in {
+  animation: routeIn 0.4s ease forwards;
+}
+
+@keyframes routeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 
 }

@@ -1002,6 +1002,8 @@ const routes = [
 
     to: "Westwyvern",
 
+    via: "Berrily",
+
     time: "~27 min",
 
     stations: [
@@ -1033,6 +1035,8 @@ const routes = [
     from: "Stepford Central",
 
     to: "Rayleigh Bay",
+
+    via: "Berrily",
 
     time: "~27 min",
 
@@ -1373,6 +1377,8 @@ const routes = [
 
     to: "Berrily",
 
+    via: "Barton",
+
     time: "~22 min",
 
     stations: [
@@ -1435,6 +1441,8 @@ const routes = [
 
     to: "Morganstown",
 
+    via: "Berrily",
+
     time: "~21 min",
 
     stations: [
@@ -1493,6 +1501,8 @@ const routes = [
 
     to: "Morganstown",
 
+    via: "Barton",
+
     time: "~19 min",
 
     stations: [
@@ -1524,6 +1534,8 @@ const routes = [
     from: "St Helens Bridge",
 
     to: "Morganstown",
+
+    via: "Barton",
 
     time: "~13 min",
 
@@ -1713,6 +1725,8 @@ const routes = [
 
     to: "Morganstown",
 
+    via: "Benton",
+
     time: "~25 min",
 
     stations: [
@@ -1746,6 +1760,8 @@ const routes = [
     from: "Greenslade",
 
     to: "Stepford Bay",
+
+    via: "Elsemere Junction",
 
     time: "~23 min",
 
@@ -1827,6 +1843,8 @@ const routes = [
 
     to: "Stepford Bay",
 
+    via: "Barton",
+
     time: "~26 min",
 
     stations: [
@@ -1864,6 +1882,8 @@ const routes = [
 
     to: "Whitney Green",
 
+    via: "Elsemere Junction",
+
     time: "~18 min",
 
     stations: [
@@ -1895,6 +1915,8 @@ const routes = [
     from: "Stepford Victoria",
 
     to: "Greenslade",
+
+    via: "Barton",
 
     time: "~24 min",
 
@@ -1956,6 +1978,8 @@ const routes = [
 
     to: "Leighton City",
 
+    via: "Benton",
+
     time: "~13 min",
 
     stations: [
@@ -1979,6 +2003,8 @@ const routes = [
     from: "Stepford Central",
 
     to: "Llyn-by-the-Sea",
+
+    via: "Benton",
 
     time: "~26 min",
 
@@ -2005,6 +2031,8 @@ const routes = [
     icon: "images/SE.jpg",
 
     from: "Stepford Central",
+
+    via: "Benton",
 
     to: "Llyn-by-the-Sea",
 
@@ -2055,6 +2083,8 @@ const routes = [
 
     to: "Llyn-by-the-Sea",
 
+    via: "Morganstown",
+
     time: "~20 min",
 
     stations: [
@@ -2082,6 +2112,8 @@ const routes = [
 
     to: "Llyn-by-the-Sea",
 
+    via: "Morganstown",
+
     time: "~17 min",
 
     stations: [
@@ -2103,6 +2135,8 @@ const routes = [
     from: "Stepford Central",
 
     to: "Westwyvern",
+
+    via: "Morganstown",
 
     time: "~20 min",
 
@@ -2129,6 +2163,8 @@ const routes = [
     from: "Newry",
 
     to: "Llyn-by-the-Sea",
+
+    via: "Morganstown",
 
     time: "~23 min",
 
@@ -2157,6 +2193,8 @@ const routes = [
 
     to: "Llyn-by-the-Sea",
 
+    via: "Benton",
+
     time: "~26 min",
 
     stations: [
@@ -2183,6 +2221,8 @@ const routes = [
 
     to: "Llyn-by-the-Sea",
 
+    via: "Morganstown",
+
     time: "~20 min",
 
     stations: [
@@ -2207,6 +2247,8 @@ const routes = [
     from: "Newry",
 
     to: "Leighton City",
+
+    via: "Benton",
 
     time: "~13 min",
 
@@ -2255,6 +2297,8 @@ const routes = [
     from: "Stepford Central",
 
     to: "Llyn-by-the-Sea",
+
+    via: "Benton",
 
     time: "~25 min",
 
@@ -2897,13 +2941,30 @@ function randomRoute() {
     const result =
       document.getElementById("result");
 
+      result.classList.add("route-changing");
+
     result.className = "empty";
+    
+    result.classList.remove("route-in");
+    result.classList.add("route-out");
 
     result.innerHTML = `
       <div class="empty-message">
         Please select at least one operator to generate a route.
       </div>
     `;
+
+    requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+    result.classList.remove("route-out");
+
+    result.classList.add("route-in");
+
+  });
+
+});
 
     return;
   }
@@ -2994,6 +3055,13 @@ function randomRoute() {
           ${route.to}
 
         </div>
+
+        ${route.via ? `
+
+        <div class="via">
+          VIA ${route.via}
+        </div>
+        ` : ""}
 
         <div class="route-description">
 
