@@ -1,12 +1,14 @@
 /*
 ==================================================
-number: "",
 
-    operator: "",
+  {
+    number: "R000",
 
-    color: "",
+    operator: "Stepford Connect",
 
-    icon: "",
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
 
     from: "",
 
@@ -17,6 +19,7 @@ number: "",
     stations: [
     
     ]
+  }
 ==================================================
 */
 
@@ -174,6 +177,965 @@ const routes = [
     ]
   },
 
+  {
+    number: "R009",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Victoria",
+
+    to: "Edgemead",
+
+    time: "~28 min",
+
+    stations: [
+      "Stepford Victoria",
+      "Stepford Central",
+      "Stepford East",
+      "St Helens Bridge",
+      "Bodin",
+      "Coxly",
+      "Benton",
+      "Benton Bridge",
+      "Hampton Hargate",
+      "Water Newton",
+      "Rocket Parade",
+      "Leighton Stepford Road",
+      "Leighton City",
+      "Edgemead"
+    ]
+  },
+
+  {
+    number: "R020",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Whitefield",
+
+    time: "~9 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "Stepford UFC",
+        "Woodhead Lane",
+        "Houghton Rake",
+        "Whitefield"
+    ]
+  },
+
+  {
+    number: "R022",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Beechley",
+
+    to: "Whitefield",
+
+    time: "~8 min",
+
+    stations: [
+        "Beechley",
+        "Stepford Central",
+        "Stepford East",
+        "Stepford UFC",
+        "Woodhead Lane",
+        "Whitefield"
+    ]
+  },
+
+  {
+    number: "R024",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~45 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Water Newton",
+        "Rocket Parade",
+        "Leighton Stepford Road",
+        "leighton City",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern",
+        "Starryloch",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R025",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "St Helens Bridge",
+
+    to: "Westwyvern",
+
+    time: "~35 min",
+
+    stations: [
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Upper Staploe",
+        "Water Newton",
+        "Rocket Parade",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle Racecourse",
+        "Millcastle",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R026",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Victoria",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~43 min",
+
+    stations: [
+        "Stepford Victoria",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern",
+        "Nortshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R032",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Willowfield",
+
+    to: "Port Benton",
+
+    time: "~16 min",
+
+    stations: [
+        "Willowfield",
+        "Beechley",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Port Benton"
+    ]
+  },
+
+  {
+    number: "R033",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Beechley",
+
+    to: "Stepford Airport Central",
+
+    time: "~19 min",
+
+    stations: [
+        "Beechley",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Stepford Airport Parkway",
+        "Stepford Airport Central"
+      ]
+  },
+
+  {
+    number: "R035",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Willowfield",
+
+    to: "Westwyvern",
+
+    time: "~42 min",
+
+    stations: [
+        "Willowfield",
+        "Beechley",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R036",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Willowfield",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~45 min",
+
+    stations: [
+        "Willowfield",
+        "Beechley",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R037",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Leighton City",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~20 min",
+
+    stations: [
+        "Leighton City",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern",
+        "Nortshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R038",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Leighton City",
+
+    to: "Westwyvern",
+
+    time: "~16 min",
+
+    stations: [
+        "Leighton City",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle Racecourse",
+        "Millcastle",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R039",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Benton",
+
+    to: "Leighton City",
+
+    time: "~14 min",
+
+    stations: [
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Upper Staploe",
+        "Water Newton",
+        "Rocket Parade",
+        "Leighton Stepford Road",
+        "Leighton City"
+    ]
+  },
+
+  {
+    number: "R040",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Edgemead",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~22 min",
+
+    stations: [
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle Racecourse",
+        "Millcastle",
+        "Westwyvern",
+        "Starryloch",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R041",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Leighton West",
+
+    to: "Edgemead",
+
+    time: "~4 min",
+
+    stations: [
+        "Leighton West",
+        "Edgemead"
+    ]
+  },
+
+  {
+    number: "R042",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Leighton West",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~22 min",
+
+    stations: [
+        "Leighton West",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle",
+        "Westwyvern",
+        "Starryloch",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R043",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Leigton West",
+
+    to: "Leighton City",
+
+    time: "~3 min",
+
+    stations: [
+        "Leighton West",
+        "Leighton City"
+    ]
+  },
+
+  {
+    number: "R044",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Benton",
+
+    to: "Leighton West",
+
+    time: "~17 min",
+
+    stations: [
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Upper Staploe",
+        "Water Newton",
+        "Rocket Parade",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Leighton West"
+    ]
+  },
+
+  {
+    number: "R045",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Victoria",
+
+    to: "Leighton City",
+
+    time: "~26 min",
+
+    stations: [
+        "Stepford Victoria",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Hampton Hargate",
+        "Upper Staploe",
+        "Water Newton",
+        "Rocket Parade",
+        "Leighton Stepford Road",
+        "Leighton City"
+    ]
+  },
+  
+  {
+    number: "R046",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Victoria",
+
+    to: "Airport Terminal 2",
+
+    time: "~23 min",
+
+    stations: [
+        "Stepford Victoria",
+        "City Hospital",
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Stepford Airport Parkway",
+        "Stepford Airport Central",
+        "Airport Central 2"
+    ]
+  },
+
+  {
+    number: "R048",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "St Helens Bridge",
+
+    to: "Airport Terminal 2",
+
+    time: "~16 min",
+
+    stations: [
+        "St Helens Bridge",
+        "Bodin",
+        "Coxly",
+        "Benton",
+        "Benton Bridge",
+        "Stepford Airport Parkway",
+        "Stepford Airport Central",
+        "Airport Terminal 2"
+    ]
+  },
+
+  {
+    number: "R049",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Rayleigh Bay",
+
+    to: "Edgemead",
+
+    time: "~5 min",
+
+    stations: [
+        "Rayleigh Bay",
+        "Carnalea Bridge",
+        "Aslockby",
+        "Edgemead"
+    ]
+  },
+
+  {
+    number: "R050",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Rayleigh Bay",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~21 min",
+
+    stations: [
+        "Rayleigh Bay",
+        "Carnalea Bridge",
+        "Aslockby",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle Racecourse",
+        "Millcastle",
+        "Westwyvern",
+        "Starryloch",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R100",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Rayleigh Bay",
+
+    to: "Leighton West",
+
+    time: "~7 min",
+
+    stations: [
+        "Rayleigh Bay",
+        "Carnalea Bridge",
+        "Aslockby",
+        "Edgemead",
+        "Leighton West"
+    ]
+  },
+
+  {
+    number: "R101",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Rayleigh Bay",
+
+    to: "Leighton City",
+
+    time: "~7 min",
+
+    stations: [
+        "Rayleigh Bay",
+        "Carnalea Bridge",
+        "Aslockby",
+        "Edgemead",
+        "Leighton City"
+    ]
+  },
+
+  {
+    number: "R102",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Rayleigh Bay",
+
+    to: "Westwyvern",
+
+    time: "~18 min",
+
+    stations: [
+        "Rayleigh Bay",
+        "Carnalea Bridge",
+        "Aslockby",
+        "Edgemead",
+        "Faymere",
+        "Westercoast",
+        "Millcastle Racecourse",
+        "Millcastle",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R103",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Willowfield",
+
+    to: "Whitefield",
+
+    time: "~14 min",
+
+    stations: [
+        "Willowfield",
+        "Beechley",
+        "Stepford Central",
+        "Stepford East",
+        "Stepford UFC",
+        "Woodhead Lane",
+        "Houghton Rake",
+        "Whitefield"
+    ]
+  },
+
+  {
+    number: "R104",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Llyn-by-the-Sea",
+
+    time: "~34 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Elsemere Junction",
+        "Berrrily",
+        "Morgenstown",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Millcastle",
+        "Westwyvern",
+        "Northshore",
+        "Llyn-by-the-Sea"
+    ]
+  },
+
+  {
+    number: "R105",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Westwyvern",
+
+    time: "~27 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Elsemere Junction",
+        "Berrily",
+        "Morganstown",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Westercoast",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R106",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Rayleigh Bay",
+
+    time: "~27 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Elsemere Junction",
+        "Berrily",
+        "Morganstown",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Aslockby",
+        "Rayleigh Bay"
+    ]
+  },
+
+  {
+    number: "R107",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Central",
+
+    to: "Leighton West",
+
+    time: "~22 min",
+
+    stations: [
+        "Stepford Central",
+        "Stepford East",
+        "St Helens Bridge",
+        "Elsemere Junction",
+        "Berrily",
+        "Morganstown",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Leighton West"
+    ]
+  },
+
+  {
+    number: "R108",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Airport Central",
+
+    to: "Westwyvern",
+
+    time: "~20 min",
+
+    stations: [
+        "Stepford Airport Central",
+        "Stepford Airport Parkway",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Edgemead",
+        "Millcastle",
+        "Westwyvern"
+    ]
+  },
+
+  {
+    number: "R109",
+
+    operator: "Stepford Connect",
+
+    color: "rgb(0, 152, 225)",
+
+    icon: "images/SC.jpg",
+
+    from: "Stepford Airport Central",
+
+    to: "Leighton West",
+
+    time: "~15 min",
+
+    stations: [
+        "Stepford Airport Central",
+        "Stepford Airport Parkway",
+        "Hampton Hargate",
+        "Water Newton",
+        "Leighton Stepford Road",
+        "Leighton City",
+        "Leighton West"
+    ]
+  },
 
   /* =========================
      METRO
