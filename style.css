@@ -75,6 +75,34 @@ h1 {
   font-size: 16px;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background-color: rgb(4, 13, 28);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+  bottom: 0;
+  width: 95%;
+}
+
+.footer-content {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 20px 0;
+}
+
+.footer-content p:first-child {
+  font-weight: bold;
+}
 
 /* =========================
    TABS
