@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SCR Route Generator</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>SCR Route Generator</h1>
+
+      <p class="subtitle">
+        Generate random route to drive in Stepford County Railway
+      </p>
+    </header>
+
+    <div class="tabs">
+
+      <div class="operator-tabs">
+
+        <button
+          class="tab"
+          data-operator="Stepford Connect"
+          onclick="toggleOperator(this)"
+
+          data-color="rgb(0, 152, 255)"
+        >
+          <img src="images/SC.jpg" alt="Stepford Connect">
+        </button>
+
+        <button
+          class="tab"
+          data-operator="Metro"
+          onclick="toggleOperator(this)"
+
+          data-color="rgb(238, 64, 68)"
+        >
+          <img src="images/ME.jpg" alt="Metro">
+        </button>
+
+        <button
+          class="tab"
+          data-operator="Stepford Express"
+          onclick="toggleOperator(this)"
+
+          data-color="rgb(255, 0, 128)"
+        >
+          <img src="images/SE.jpg" alt="Stepford Express">
+        </button>
+
+        <button
+          class="tab"
+          data-operator="Waterline"
+          onclick="toggleOperator(this)"
+
+          data-color="rgb(73, 95, 124)"
+        >
+          <img src="images/WL.jpg" alt="Waterline">
+        </button>
+
+        <button
+          class="tab"
+          data-operator="Airlink"
+          onclick="toggleOperator(this)"
+
+          data-color="rgb(226, 112, 20)"
+        >
+
+          <img src="images/AL.jpg" alt="Airlink">
+        </button>
+
+      </div>
+
+      <div
+        id="selection-info"
+        class="selection-info"
+      >
+        Choose one or more operators.
+      </div>
+
+    </div>
+
+    <div class="generator">
+
+      <div class="generate-container">
+
+        <button
+          class="generate"
+          onclick="randomRoute()"
+        >
+          RANDOMIZE ROUTE
+        </button>
+
+      </div>
+
+      <div
+        id="result"
+        class="empty"
+      >
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
