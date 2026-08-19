@@ -3002,23 +3002,31 @@ function randomRoute() {
 
   const stationList =
     route.stations
-      .map(
-        station => `
+      .map((station, index) =>{
 
-          <li>
+        const isFirst = index === 0;
+        const isLast = index === route.stations.lenght -1;
 
-            <span
-              class="station-dot"
-            ></span>
+        return `
+          <li
+            class="
+              station-item
+              ${isFirst ? "station-first" : ""}
+              ${isLast ? "station-last" : ""}
+            "
+          >
 
-            <span>
+            <span class="station-line"></span>
+            
+            <span class="station-dot"></span>
+
+            <span class="station-name">
               ${station}
             </span>
 
-          </li>
-
-        `
-      )
+          </li> 
+        `;
+      })
       .join("");
 
   const result =

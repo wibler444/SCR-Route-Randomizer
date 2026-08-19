@@ -502,17 +502,75 @@ body {
 ========================= */
 
 .generator {
-  background: var(--tab-color);
+  position: relative;
 
-  border:
-    1px solid
-    rgba(255,255,255,0.08);
+  background: #07162d;
+
+  border: 1px solid rgba(255,255,255,0.09);
 
   border-radius: 18px;
 
   overflow: hidden;
+
+  box-shadow: 0 15px 45px rgba(0,0,0,0.22);
 }
 
+/* =========================
+   DEPARTURE BOARD HEADER
+========================= */
+
+.departure-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 13px 22px;
+
+  background: rgba(4,13,28,0.65);
+
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.departure-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #dce5ef;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.departure-light {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--operator-color);
+
+  box-shadow: 0 0 9px var(--operator-color);
+
+  transition: background 0.25s ease, box-shadow 0.25 ease;
+}
+
+.departure-status {
+  color: #526983;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
 
 /* =========================
    GENERATE BUTTON
@@ -607,24 +665,29 @@ body {
 
 
 .route-number {
-  display: inline-block;
+  display: inline-flex;
 
-  padding: 8px 13px;
+  align-items: center;
 
-  border-radius: 8px;
+  padding: 7px 11px;
 
-  border:
-    1px solid
-    var(--operator-color);
+  border-radius: 5px;
 
-  color:
-    var(--operator-color);
+  border: 1px solid var(--operator-color);
 
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.025);
 
-  font-weight: 800;
+  color: var(--operator-color);
 
-  margin-bottom: 22px;
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 0 15px rgba(0, 152, 225, 0.08);
 }
 
 
@@ -661,13 +724,15 @@ body {
 
 
 .route {
-  font-size: 20px;
+  font-size: 27px;
 
-  line-height: 1.25;
+  line-height: 1.2;
 
-  font-weight: 800;
+  font-weight: 900;
 
-  margin-bottom: 18px;
+  letter-spacing: -0.05;
+
+  margin-bottom: 12px;
 }
 
 .via {
@@ -687,10 +752,9 @@ body {
 
 
 .route-arrow {
-  color:
-    var(--operator-color);
+  color: var(--operator-color);
 
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 
@@ -773,15 +837,34 @@ body {
 ========================= */
 
 .stations-title {
-  color: #8da1ba;
+  display: flex;
 
-  font-size: 14px;
+  align-items: center;
 
-  font-weight: 800;
+  gap: 8px;
+
+  color: #71849c;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
 
   text-transform: uppercase;
 
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+}
+
+.stations-title::before {
+  content: "";
+
+  width: 3px;
+  height: 14px;
+
+  border-radius: 2px;
+
+  background: var(--operator-color);
 }
 
 
@@ -801,18 +884,20 @@ body {
 
   position: absolute;
 
-  left: 6px;
+  left: 20px;
 
-  top: 9px;
+  top: 10px;
 
-  bottom: 9px;
+  bottom: 10px;
 
   width: 2px;
 
   background:
     var(--operator-color);
 
-  opacity: 0.6;
+  opacity: 0.45;
+
+  box-shadow: 0 0 8px color-mix(in srgb, var(--operator-color) 35%, transparent);
 }
 
 
@@ -823,13 +908,19 @@ body {
 
   align-items: center;
 
-  gap: 15px;
+  gap: 14px;
 
-  min-height: 34px;
+  min-height: 36px;
 
-  color: #e7edf5;
+  color: #dce5ef;
 
-  font-size: 15px;
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.stations li:hover {
+  background: rgba(255,255,255,0.035);
 }
 
 
@@ -852,6 +943,19 @@ body {
   border:
     2px solid
     var(--tab-color);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.station-dot.via {
+  width: 15;
+  height: 15;
+
+  border-radius: 3px;
+
+  transform: rotate(45deg);
+
+  box-shadow: 0 0 0 1px var(--operator-color), 0 0 12px color-mix(in srgb, var(--operator-color) 35%, transparent);
 }
 
 
