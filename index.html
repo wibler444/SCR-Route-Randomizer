@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SCR Route Generator</title>
@@ -10,9 +11,7 @@
 </head>
 
 <body>
-
   <div class="container">
-
 <header class="hero">
 
     <div class="hero-badge">
@@ -29,11 +28,8 @@
   </p>
 
 </header>
-
     <div class="tabs">
-
       <div class="operator-tabs">
-
         <button
           class="tab"
           data-operator="Stepford Connect"
@@ -84,16 +80,25 @@
 
           <img src="images/AL.jpg" alt="Airlink">
         </button>
-
       </div>
 
       <div
         id="selection-info"
         class="selection-info"
-      >
-        Choose one or more operators.
-      </div>
+>
+        <span class="selection-label">
+            SELECTED OPERATORS
+        </span>
 
+        <div
+          id="selected-badges"
+          class="selected-badges"
+  >
+          <span class="selection-empty">
+            Choose one or more operators.
+          </span>
+        </div>
+      </div>
     </div>
 
     <div class="generator">

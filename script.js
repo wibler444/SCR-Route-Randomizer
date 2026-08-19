@@ -2880,29 +2880,62 @@ function toggleOperator(button) {
 
   }
 
-  updateSelectionInfo();
+  updateSelectedBadges();
 
 }
 
-function updateSelectionInfo() {
+function updateSelectedBadges() {
 
-  const info = document.getElementById("selection-info");
+  const badges = document.getElementById("selected-badges");
+
+  if (!badges) return;
+
 
   if (selectedOperators.size === 0) {
+  badges.innerHTML = `
+    <span class="selection-empty">
+      Choose one or more operators.
+    </span>
+  `;
 
-    info.innerHTML = "Choose one or more operators.";
+  return;
+}
 
-    info.classList.remove("selected");
 
-    return;
-  }
+  badges.innerHTML = "";
 
-  const names = Array.from(selectedOperators);
 
-  info.innerHTML = `Selected Operators: <b>${names.join(", ")}</b>`;
+  selectedOperators.forEach(operator => {
 
-  info.classList.add("selected");
+    const button = document.querySelector(
+      `.tab[data-operator="${operator}"]`
+    );
 
+    if (!button) return;
+
+
+    const color = button.dataset.color;
+
+
+    const badge = document.createElement("span");
+
+    badge.className = "operator-badge";
+
+    badge.style.setProperty(
+      "--badge-color",
+      color
+    );
+
+
+    badge.innerHTML = `
+      <span class="operator-badge-dot"></span>
+      ${operator}
+    `;
+
+
+    badges.appendChild(badge);
+
+  });
 }
 
 /*
