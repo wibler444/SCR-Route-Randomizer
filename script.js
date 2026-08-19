@@ -2765,7 +2765,9 @@ const routes = [
 
     from: "Stepford Central",
 
-    to: "Airport Terminal 3 (via T1)",
+    to: "Airport Terminal 3",
+
+    via: "Airport Terminal 1",
 
     time: "~13 min",
 
