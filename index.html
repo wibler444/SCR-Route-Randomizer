@@ -117,13 +117,18 @@
 
       <div class="generate-container">
 
-        <button
-          class="generate"
-          onclick="randomRoute()"
-        >
-          RANDOMIZE ROUTE
+        <div class="generate-spacer"></div>
+
+        <button class="generate" id="generate-route" onclick="randomRoute()">
+          GENERATE ROUTE
         </button>
 
+        <div class="generate-controls">
+          <button class="animation-toggle active" id="animation-toggle" type="button">
+            <span class="toggle-dot"></span>
+            ANIMATION: ON
+          </button>
+        </div>
       </div>
 
       <div
@@ -131,11 +136,59 @@
         class="empty"
       >
       </div>
-
     </div>
-
   </div>
 
+  <section class="technical-info">
+    <div class="technical-header">
+      <span class="techncial-title">
+        Technical Information
+      </span>
+    </div>
+
+    <div class="technical-grid">
+      <div class="technical-item">
+        <span class="technical-label">
+          Version
+        </span>
+
+        <span class="technical-value">
+          Beta 0.16
+        </span>
+      </div>
+
+      <div class="technical-item">
+        <span class="technical-label">
+          Operators
+        </span>
+
+        <span class="technical-value" id="technical-operators">
+          0
+        </span>
+      </div>
+
+      <div class="technical-item">
+        <span class="technical-label">
+          Available Routes
+        </span>
+
+        <span class="technical-value" id="technical-routes">
+          0
+        </span>
+      </div>
+
+      <div class="technical-item">
+        <span class="technical-label">
+          System Status
+        </span>
+
+        <span class="technical-value technical-status">
+          Operational
+        </span>
+      </div>
+    </div>
+  </section>
+  
   <footer class="site-footer">
 
   <div class="footer-line"></div>
