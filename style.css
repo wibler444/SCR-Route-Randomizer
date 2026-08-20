@@ -836,7 +836,7 @@ body {
    STATIONS
 ========================= */
 
-.stations-title {
+.stations-name {
   display: flex;
 
   align-items: center;
@@ -873,7 +873,7 @@ body {
 
   list-style: none;
 
-  padding: 0;
+  padding: 8px 0 8px 0;
 
   margin: 0;
 }
@@ -884,16 +884,15 @@ body {
 
   position: absolute;
 
-  left: 20px;
+  left: -22px;
 
-  top: 10px;
+  top: 18px;
 
-  bottom: 10px;
+  bottom: 18px;
 
   width: 2px;
 
-  background:
-    var(--operator-color);
+  background: var(--operator-color);
 
   opacity: 0.45;
 
@@ -925,37 +924,66 @@ body {
 
 
 .station-dot {
-  position: relative;
+  position: absolute;
 
-  z-index: 2;
+  left: -24px;
 
-  width: 14px;
-
-  height: 14px;
-
-  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
 
   border-radius: 50%;
 
-  background:
-    var(--operator-color);
+  background: var(--operator-color);
 
-  border:
-    2px solid
-    var(--tab-color);
+  box-shadow:
+    0 0 0 2px var(--operator-color);
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+
+  left: -23px;
 }
 
-.station-dot.via {
-  width: 15;
-  height: 15;
+.station-via {
+  width: 10px;
+  height: 10px;
 
-  border-radius: 3px;
+  border-radius: 2px;
 
   transform: rotate(45deg);
 
-  box-shadow: 0 0 0 1px var(--operator-color), 0 0 12px color-mix(in srgb, var(--operator-color) 35%, transparent);
+  background: #071529;
+
+  border: 2px solid var(--operator-color);
+
+  box-shadow:
+    0 0 8px rgba(0, 152, 225, 0.25);
+
+  left: -26px;
+}
+
+.station-end {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 2px;
+
+  transform: rotate(45deg);
+
+  background: var(--operator-color);
+
+  border: 2px solid #071529;
+  
+  left: -27px;
+}
+
+.station-first .station-name,
+.station-last .station-name {
+  font-weight: 800;
+  color: var(--operator-color);
+}
+
+.station-via + .station-name {
+  font-weight: 700;
 }
 
 
@@ -1099,4 +1127,91 @@ body {
     transform: translateY(0);
   }
 
+}
+
+.generator-is-drawing {
+  pointer-events: none;
+}
+
+.generator-is-drawing .generate {
+    cursor: wait;
+
+    filter: brightness(0.85);
+
+    transform: none;
+}
+
+#result.route-drawing {
+  position: relative;
+
+  overflow: hidden;
+}
+
+#result.route-drawing::after {
+  content: "";
+  
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 152, 255, 0.04) 45%, rgba(255,255,255,0.08) 50%, rgba(0,152,225,0.04) 55%, transparent 100%);
+
+  transform: translateY(-100%);
+
+  animation: scanline 0.7s linear infinite;
+}
+
+#result.route-drawing .result-grid {
+  animation: boardShake 0.12s linear infinite;
+}
+
+#result.route-drawing .route-number, #result.route-drawing .operator, #result.route-drawing .route, #result.route-drawing .via, #result.route-drawing .stat-value, #result.route-drawing .station-name {
+  filter: blur(0.35px);
+}
+
+#result.route-final {
+  animation: finalRouteFlash 0.45s ease;
+}
+
+@keyframes scanline {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes boardShake {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes finalRouteFlash {
+   0% {
+    filter: brightness(1.8);
+    transform: scale(1.008);
+  }
+
+  35% {
+    filter: brightness(1.25);
+    transform: scale(1.003);
+  }
+
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
 }

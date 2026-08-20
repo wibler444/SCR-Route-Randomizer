@@ -2938,6 +2938,210 @@ function updateSelectedBadges() {
   });
 }
 
+function animateRouteDraw(finalRoute) {
+  const result = document.getElementById("result");
+  const generator = document.querySelector(".generator");
+  const generateButton = document.querySelector(".generate");
+
+  if(!result || !generator || !generateButton) {
+    return;
+  }
+
+  generator.classList.add("is-drawing");
+  result.classList.remove("route-in", "route-final");
+  result.classList.add("route-drawing");
+
+  generateButton.dataset.origialText = generateButton.textContent;
+  generateButton.textContent = "DRAWING...";
+
+  const availableRoutes = routes.filter(route => selectedOperators.has(route.operator));
+
+  if(availableRoutes.length === 0) {
+    generator.classList.remove("is-drawing")
+    result.classList.remove("route-drawing");
+    return;
+  }
+
+  let currentIndex = 0;
+  let elapsed = 0;
+
+  const totalDuration = 1650;
+
+  function drawFrame() {
+    const randomRoute = availableRoutes[Math.floor(Math.random() * availableRoutes.length)];
+
+    renderRoute(randomRoute, result, true);
+
+    const progress = Math.min(elapsed / totalDuration, 1)
+
+    const eased = 1 - Math.pow(1 - progress, 3)
+
+    const delay = 35 + eased * 260;
+
+    elapsed += delay;
+
+    if(elapsed >= totalDuration) {
+      finishDraw();
+      return;
+    }
+
+    currentIndex++;
+
+    setTimeout(drawFrame, delay);
+  }
+
+  function finishDraw() {
+    renderRoute(finalRoute, result, false);
+
+    result.classList.remove("route-drawing");
+    result.classList.add("route-final");
+
+    generator.classList.remove("is=drawing")
+
+    generateButton.textContent = generateButton.dataset.origialText || "GENERATE";
+
+    setTimeout(() => {
+      result.classList.remove("route-final");
+    }, 500);
+  }
+
+  drawFrame();
+}
+
+function renderRoute(route, result, isDrawing = false) {
+  document.documentElement.style.setProperty(
+    "--operator-color",
+    route.color
+  );
+
+  const stationList = route.stations
+    .map((station, index) => {
+      const isFirst = index === 0;
+      const isLast = index === route.stations.length - 1;
+      const isVia = route.via && station === route.via;
+
+      let markerClass = "station-dot";
+
+      if (isFirst || isLast) {
+        markerClass += " station-end";
+      } else if (isVia) {
+        markerClass += " station-via";
+      }
+
+      return `
+        <li class="${isFirst ? "station-first" : ""} ${isLast ? "station-last" : ""}">
+          <span class="${markerClass}"></span>
+
+          <span class="station-name">
+            ${station}
+          </span>
+        </li>
+      `;
+    })
+    .join("");
+
+  result.innerHTML = `
+    <div class="result-grid">
+
+      <div class="route-details">
+
+        <div class="route-number">
+          ${route.number}
+        </div>
+
+        <div class="operator">
+
+          <img
+            class="operator-icon"
+            src="${route.icon}"
+            alt="${route.operator}"
+          >
+
+          ${route.operator}
+
+        </div>
+
+        <div class="route">
+
+          ${route.from}
+
+          <span class="route-arrow">
+            →
+          </span>
+
+          ${route.to}
+
+        </div>
+
+        ${
+          route.via
+            ? `
+              <div class="via">
+                VIA ${route.via}
+              </div>
+            `
+            : ""
+        }
+
+        <div class="route-description">
+
+          Route:
+
+          <br><br>
+
+          ${route.stations.join(" → ")}
+
+        </div>
+
+      </div>
+
+
+      <div class="route-info">
+
+        <div class="stats">
+
+          <div class="stat">
+
+            <span class="stat-label">
+              Estimated Route Time
+            </span>
+
+            <span class="stat-value">
+              ${route.time}
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <span class="stat-label">
+              Number of Stations
+            </span>
+
+            <span class="stat-value">
+              ${route.stations.length} Stations
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="stations-title">
+          Route Stations
+        </div>
+
+        <ul class="stations">
+          ${stationList}
+        </ul>
+
+      </div>
+
+    </div>
+  `;
+}
+
 /*
 ==================================================
 Randomness
@@ -2987,43 +3191,38 @@ function randomRoute() {
 
 
   const route =
-    availableRoutes[
-      Math.floor(
-        Math.random() *
-        availableRoutes.length
-      )
-    ];
+    availableRoutes[Math.floor(Math.random() * availableRoutes.length)];
+
+  animateRouteDraw(route);
 
   document.documentElement.style
-  .setProperty(
-    "--operator-color",
-    route.color
-  );
+  .setProperty("--operator-color",route.color);
 
   const stationList =
     route.stations
       .map((station, index) =>{
 
         const isFirst = index === 0;
-        const isLast = index === route.stations.lenght -1;
+        const isLast = index === route.stations.length - 1;
+        const isVia = route.via && station === route.via;
+
+        let markerClass = "station-dot";
+
+        if (isFirst || isLast) {
+          markerClass += " station-end";
+        } else if (isVia) {
+          markerClass += " station-via";
+        }
 
         return `
-          <li
-            class="
-              station-item
-              ${isFirst ? "station-first" : ""}
-              ${isLast ? "station-last" : ""}
-            "
-          >
+          <li class="${isFirst ? "station-first" : ""} ${isLast ? "station-last" : ""}">
 
-            <span class="station-line"></span>
-            
-            <span class="station-dot"></span>
+            <span class="${markerClass}"></span>
 
             <span class="station-name">
               ${station}
             </span>
-
+            
           </li> 
         `;
       })
