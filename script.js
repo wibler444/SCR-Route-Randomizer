@@ -331,11 +331,37 @@ function randomRoute() {
     return;
   }
 
-  const availableRoutes = routes.filter(route =>
-    selectedOperators.has(route.operator)
-  );
+  let availableRoutes = routes.filter(route => selectedOperators.has(route.operator));
 
-  if (availableRoutes.length === 0) return;
+  const selectedLength = document.getElementById("routeLength")
+    ? document.getElementById("routeLength").value : "any";
+
+  const parseRouteTime = (timeStr) => {
+    if(!timeStr) return 0;
+    const match = timeStr.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 0;
+  }
+
+  if(selectedLength === "short") {
+    availableRoutes = availableRoutes.filter(route => parseRouteTime(route.time) <= 15);
+  }
+
+  if(selectedLength === "long") {
+    availableRoutes = availableRoutes.filter(route => parseRouteTime(route.time) > 15);
+  }
+
+  if (availableRoutes.length === 0) {
+    result.className = "result-empty";
+
+    result.innerHTML = `
+      <div class="empty-message">
+        No routes match the selected filters.
+      </div>
+    `;
+
+    return;
+  } 
+
 
   const route =
     availableRoutes[
